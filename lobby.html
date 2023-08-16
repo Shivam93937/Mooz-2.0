@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver-2.0</title>
+    <link rel="stylesheet" href="lobby.css">
+</head>
+<body>
+    <main id="lobby-container">
+        <div id="form-container">
+            <div id="form__container__header">
+                <h3>Create or Join a Room</h3>
+            </div>
+
+            <div id="form__content__wrapper">
+                <form id="join-form">
+                    <input type="text" name="invite_link" required placeholder="Enter room name"/>
+                    <input type="submit" value="Join Room" id="room-button"/>
+                </form>
+            
+            </div>
+        </div>
+    </main>
+
+</body>
+
+<script>
+    let form = document.getElementById("join-form");
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let inviteCode = e.target.invite_link.value;
+        window.location = `index.html?room=${inviteCode}`;
+    })
+</script>
+
+</html>
